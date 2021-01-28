@@ -3,8 +3,8 @@ instances {
   id: "ViejaClick"
   prototype: "/main/ViejaClick.go"
   position {
-    x: 214.0
-    y: 346.0
+    x: 127.0
+    y: 196.0
     z: 0.0
   }
   rotation {
@@ -14,9 +14,9 @@ instances {
     w: 1.0
   }
   scale3 {
-    x: 5.08
-    y: 5.08
-    z: 5.08
+    x: 3.0
+    y: 3.0
+    z: 3.0
   }
 }
 scale_along_z: 0
