@@ -1,9 +1,9 @@
 images {
-  image: "/images/cookie.png"
+  image: "/images/character_sprite_sheet.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/images/vieja.png"
+  image: "/images/galleta.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0
