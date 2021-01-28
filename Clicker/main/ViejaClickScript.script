@@ -32,7 +32,7 @@ function on_input(self, action_id, action)
 		local spritePos = go.get_world_position("ViejaClick")
 		local mouseX = action.x
 		local mouseY = action.y
-		local right = spritePos.x - 450
+		local right = spritePos.x - go.get(self.sprite, hash(size.x))--450
 		local left = spritePos.x + 450
 		local up = spritePos.y + 360
 		local down = spritePos.y - 360
