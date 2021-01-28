@@ -4,9 +4,7 @@ function init(self)
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+
 end
 
 function update(self, dt)
@@ -14,15 +12,12 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
+
 end
 
 function on_input(self, action_id, action)
 
-	print("onfunc")
-	if action_id == hash("touch") and action.pressed then
+	if action_id == hash("touch") and action.released then
 
 		local spritePos = go.get_world_position("ViejaClick")
 		local mouseX = action.x
@@ -36,13 +31,12 @@ function on_input(self, action_id, action)
 
 		if mouseX >= right and mouseX <= left and mouseY >= down and mouseY <= up then
 			print("clicked")
+			msg.post("GameHud", "Update_HUD")
 		end
 
 	end
 end
 
 function on_reload(self)
-	-- Add reload-handling code here
-	-- Learn more: https://defold.com/manuals/hot-reload/
-	-- Remove this function if not needed
+
 end

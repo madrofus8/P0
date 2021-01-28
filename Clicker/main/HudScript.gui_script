@@ -1,0 +1,15 @@
+function init(self)
+
+	text_node = gui.get_node("Clicks")
+	current_points = 0
+	gui.set_text(text_node, 0)
+	
+end
+
+function on_message(self, message_id, message, sender)
+
+	if message_id == hash("Update_HUD") then
+		gui.set_text(text_node, current_points + 1)
+	end
+	
+end
