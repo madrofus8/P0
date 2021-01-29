@@ -3,6 +3,10 @@ function init(self)
 	text_node = gui.get_node("Clicks")
 	current_points = 0
 	gui.set_text(text_node, 0)
+
+	pie_node = gui.get_node("Pie")
+	current_angle = 0
+	gui.set_fill_angle(pie_node, current_angle)
 	
 end
 
@@ -11,9 +15,15 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("Update_HUD") then
 		current_points = current_points + 1
 		gui.set_text(text_node, current_points)
+				
 		if current_points % 10 == 0 then
-			msg.post("/ViejaClick", "SpawnCookie") 
-		end
+			msg.post("/ViejaClick", "SpawnCookie")
+		end		
+	end
+
+	if message_id == hash("Update_Pie") then
+		current_angle = current_angle + 36
+		gui.set_fill_angle(pie_node, current_angle % 360)
 	end
 	
 end

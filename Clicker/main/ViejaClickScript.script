@@ -4,7 +4,6 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("SpawnCookie") then
-		print("jaja")
 		local pos = go.get_position()
 		local sx = go.get("#sprite", "size.x")
 		local sy = go.get("#sprite", "size.y")
@@ -29,8 +28,8 @@ function on_input(self, action_id, action)
 		local down = spritePos.y - (sy/2 * go.get("ViejaClick", "scale.y"))
 
 		if mouseX >= right and mouseX <= left and mouseY >= down and mouseY <= up then
-			print("clicked")
 			msg.post("/m_HUD#GameHud", "Update_HUD")
+			msg.post("/m_HUD#GameHud", "Update_Pie")
 		end
 
 	end
