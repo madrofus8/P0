@@ -2,6 +2,10 @@ images {
   image: "/images/object_spawn.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/images/background_image.jpg"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "CharacterAnimation"
   images {
