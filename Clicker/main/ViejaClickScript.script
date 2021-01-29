@@ -1,18 +1,17 @@
 function init(self)
-	print("oninit")
 	msg.post(".", "acquire_input_focus")
 end
 
-function final(self)
-
-end
-
-function update(self, dt)
-	
-end
-
 function on_message(self, message_id, message, sender)
-
+	if message_id == hash("SpawnCookie") then
+		print("jaja")
+		local pos = go.get_position()
+		local sx = go.get("#sprite", "size.x")
+		local sy = go.get("#sprite", "size.y")
+		pos.x = pos.x + sx/2 * go.get("ViejaClick", "scale.x") + math.random(0, 500)
+		pos.y = pos.y + sy/2 * go.get("ViejaClick", "scale.y") + math.random (0, 200)
+		local heart_id = factory.create("#heartFactory", pos)
+	end
 end
 
 function on_input(self, action_id, action)
@@ -24,19 +23,15 @@ function on_input(self, action_id, action)
 		local mouseY = action.y
 		local sx = go.get("#sprite", "size.x")
 		local sy = go.get("#sprite", "size.y")
-		local right = spritePos.x - (sx/2 + go.get("ViejaClick", "scale.x"))--450
-		local left = spritePos.x + (sx/2 + go.get("ViejaClick", "scale.x"))
-		local up = spritePos.y + (sy/2 + go.get("ViejaClick", "scale.x"))
-		local down = spritePos.y - (sy/2 + go.get("ViejaClick", "scale.x"))
+		local right = spritePos.x - (sx/2 * go.get("ViejaClick", "scale.x"))--450
+		local left = spritePos.x + (sx/2 * go.get("ViejaClick", "scale.x"))
+		local up = spritePos.y + (sy/2 * go.get("ViejaClick", "scale.y"))
+		local down = spritePos.y - (sy/2 * go.get("ViejaClick", "scale.y"))
 
 		if mouseX >= right and mouseX <= left and mouseY >= down and mouseY <= up then
 			print("clicked")
-			msg.post("GameHud", "Update_HUD")
+			msg.post("/m_HUD#GameHud", "Update_HUD")
 		end
 
 	end
-end
-
-function on_reload(self)
-
 end

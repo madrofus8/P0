@@ -1,6 +1,26 @@
 components {
-  id: "ViejaClickScript"
-  component: "/main/ViejaClickScript.script"
+  id: "heartScript"
+  component: "/main/heartScript.script"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "sprite"
+  type: "sprite"
+  data: "tile_set: \"/main/main.atlas\"\n"
+  "default_animation: \"object_spawn\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
   position {
     x: 0.0
     y: 0.0
@@ -40,51 +60,13 @@ embedded_components {
   "    index: 0\n"
   "    count: 3\n"
   "  }\n"
-  "  data: 42.3635\n"
-  "  data: 66.282\n"
-  "  data: 10.0\n"
+  "  data: 509.74\n"
+  "  data: 510.523\n"
+  "  data: 636.6\n"
   "}\n"
   "linear_damping: 0.0\n"
   "angular_damping: 0.0\n"
   "locked_rotation: false\n"
-  ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-embedded_components {
-  id: "sprite"
-  type: "sprite"
-  data: "tile_set: \"/main/main.atlas\"\n"
-  "default_animation: \"CharacterAnimation\"\n"
-  "material: \"/builtins/materials/sprite.material\"\n"
-  "blend_mode: BLEND_MODE_ALPHA\n"
-  ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-embedded_components {
-  id: "heartFactory"
-  type: "factory"
-  data: "prototype: \"/main/heart.go\"\n"
-  "load_dynamically: false\n"
   ""
   position {
     x: 0.0

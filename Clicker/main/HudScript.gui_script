@@ -9,7 +9,11 @@ end
 function on_message(self, message_id, message, sender)
 
 	if message_id == hash("Update_HUD") then
-		gui.set_text(text_node, current_points + 1)
+		current_points = current_points + 1
+		gui.set_text(text_node, current_points)
+		if current_points % 10 == 0 then
+			msg.post("/ViejaClick", "SpawnCookie") 
+		end
 	end
 	
 end
